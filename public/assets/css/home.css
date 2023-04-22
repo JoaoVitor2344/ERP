@@ -1,0 +1,35 @@
+.divTopico {
+    min-height: 80px;
+}
+
+.topico {
+    width: 70%;
+    height: 100%;
+    background: var(--main-color);
+
+    position: absolute;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    font-size: 22px;
+    font-weight: 500;
+    color: white;
+
+    padding: 10px;
+}
+
+.topico > * {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.topico i {
+    font-size: 30px;
+}
