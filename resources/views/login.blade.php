@@ -14,7 +14,7 @@
             <input class="mb-4" type="email" name="email" placeholder="E-mail">
             <input class="mb-2" type="password" name="password" placeholder="Senha">
             <div class="mb-2"><a class="link">Esqueceu a senha?</a></div>
-            <button class="btn-acessar mb-2">Acessar</button>
+            <button class="btn-principal btn-acessar mb-2">Acessar</button>
         </form>
         <div class="text-center"><a class="link">Cadastre-se</a></div>
     </div>

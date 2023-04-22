@@ -1,7 +1,7 @@
 :root {
     --main-color: #1C9BE2;
     --main-color2: #05344E;
-    --main-color3: #1C9BE2
+    --main-color3: rgba(28, 155, 226, 0.4);
 }
 
 body {
@@ -90,4 +90,17 @@ form input {
 
     color: grey;
     background-color: white;
+}
+
+.btn-principal {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: 600;
+    
+    border: none;
+    outline: none;
+    border-radius: 50px;
+
+    color: white;
 }

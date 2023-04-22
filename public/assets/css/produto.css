@@ -1,0 +1,24 @@
+.divImg {
+    min-height: 300px;
+    background-color: var(--main-color3);
+}
+
+.description > * {
+    display: flex;
+    flex-direction: column;
+    
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.nome {
+    font-size: 25px!important;
+}
+
+
+.divBtn {
+    position: absolute;
+}
+.btn-fazer-pedido {
+    background-color: #0EDF09;
+}

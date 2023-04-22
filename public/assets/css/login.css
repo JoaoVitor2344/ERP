@@ -27,15 +27,5 @@ body {
 }
 
 .btn-acessar {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 18px;
-    font-weight: 600;
-    
-    border: none;
-    outline: none;
-    border-radius: 50px;
-
-    color: white;
     background-color: var(--main-color);
 }
