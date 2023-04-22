@@ -1,9 +1,6 @@
 <?php
 
-<<<<<<< HEAD
-=======
 use App\Http\Controllers\LoginController;
->>>>>>> front
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,11 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-<<<<<<< HEAD
-Route::get('/', function () {
-    return view('welcome');
-});
-=======
 Route::get("login", [LoginController::class, "index"]);
 Route::post("login", [LoginController::class, "index"]);
->>>>>>> front
