@@ -1,0 +1,63 @@
+:root {
+    --main-color: #1C9BE2;
+}
+
+body {
+    background: rgb(5,52,78);
+    background: linear-gradient(0deg, rgba(5,52,78,1) 2%, rgba(28,155,226,1) 39%, rgba(28,155,226,1) 100%);
+
+    min-height: 100vh;
+}
+
+.container {
+    padding: 10px 20px!important;
+}
+
+.bemVindo {
+    font-size: 45px;
+    font-weight: 700;
+    color: white;
+}
+
+#formLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#formLogin input {
+    width: 100%;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+
+    border: none;
+    outline: none;
+    border-radius: 50px;
+
+    color: grey;
+    background-color: white;
+}
+
+.link {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+
+    text-decoration: none;
+}
+
+.btn-acessar {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: 600;
+    
+    border: none;
+    outline: none;
+    border-radius: 50px;
+
+    color: white;
+    background-color: var(--main-color);
+}

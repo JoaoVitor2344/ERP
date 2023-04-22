@@ -4,12 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use GuzzleHttp\Client;
 
 class LoginController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         return view("login");
@@ -25,21 +23,19 @@ class LoginController extends Controller
         if ($validation->fails()) {
             return redirect()->back()->withErrors($validation);
         } else {
-            $url = "";
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($request->all()));
-
-            $response = curl_exec($ch);
-            if($response === false) {
-                echo 'Curl error: ' . curl_error($ch);
-            } else {
-                return view("home");
-            }
+            // $client = new Client();
+            // $response = $client->request('GET', 'https://localhost:8000/api/users');
             
-            curl_close($ch);
+            // $body = $response->getBody()->getContents();
+            // $response = json_decode($body);
+
+            // if($response->email == $request['email'] && $response->password == $request['password']) {
+            //     return redirect()->route('home');
+            // } else {
+            //     return redirect()->back()->withErrors("Usuário ou senha inválidos");
+            // }
+
+            return redirect()->route('home');
         }
     }
 }
