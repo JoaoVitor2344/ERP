@@ -15,32 +15,14 @@ class LoginController extends Controller
         return view("login");
     }
 
-    public function login(Request $request)
+    public function show(Request $request)
     {
-        // $validation = Validator::make($request->all(), [
-        //     'email'      => 'required|email|min:0',
-        //     'password'  => 'required|min:3|max:128',
-        // ]);
-
-        // if ($validation->fails()) {
-        //     return redirect()->back()->withErrors($validation);
-        // } else {
-            // $client = new Client();
-            // $response = $client->request('GET', 'https://localhost:8000/api/users');
-            
-            // $body = $response->getBody()->getContents();
-            // $response = json_decode($body);
-
-            // if($response->email == $request['email'] && $response->password == $request['password']) {
-            //     return redirect()->route('home');
-            // } else {
-            //     return redirect()->back()->withErrors("Usuário ou senha inválidos");
-            // }
-            
-            $user = User::find(1);
-            Auth::login($user);
-
-            return redirect('home');
-        // }
+        $user = User::where('email', $request->email)->first();
+        if($user) {
+            if($user->password == $request->password) {
+                Auth::login($user);
+                return redirect('home');
+            }
+        }
     }
 }

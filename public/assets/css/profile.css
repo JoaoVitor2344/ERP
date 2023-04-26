@@ -1,0 +1,22 @@
+form input {
+    background-color: var(--main-color3)!important;
+}
+
+#divImage > * {
+    border-radius: 100%;
+    border: 5px var(--main-color3) solid;
+}
+
+#divImage #image {
+    width: 150px;
+    height: 150px;
+}
+
+#divImage i {
+    font-size: 140px;
+    color: grey;
+}
+
+.link {
+    color: var(--main-color);
+}

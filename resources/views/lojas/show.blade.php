@@ -9,7 +9,7 @@
     @include('layouts.navbar')
 
     <div class="container">
-        <div class="produtos mt-3">
+        <div class="produtos">
             @foreach($produtos as $i => $produto)
                 <div class="produto rounded col-6 mb-2 <?= ($i % 2 == 0) ? 'me-2' : '' ?>">
                     <a href="/produto/{{ $produto->id }}">
@@ -25,14 +25,5 @@
     </div>
 
     @include('layouts.footer')
-
-    <script>
-        $(function() {
-            $(document).ready(function() {
-                let heightNavBar = $(".nav-bar").css("height");
-                $(".container").css("margin-top", heightNavBar);
-            });
-        }, { passive: true });
-    </script>
 </body>
 </html>

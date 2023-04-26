@@ -9,7 +9,7 @@
     @include('layouts.navbar')
 
     <div class="container">
-        <div class="lojas mt-3">
+        <div class="lojas">
             @foreach($lojas as $i => $loja)
                 <div class="loja rounded mb-3 <?= ($i % 2 == 0) ? 'me-3' : '' ?>">
                     <a href="lojas/{{ $loja->id }}">

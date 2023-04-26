@@ -2,7 +2,6 @@
 <html lang="pt-br">
 <head>
     @include('layouts.head')
-
     <link rel="stylesheet" href="assets/css/home.css">
 </head>
 <body>

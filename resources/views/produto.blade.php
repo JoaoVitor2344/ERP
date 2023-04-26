@@ -9,7 +9,7 @@
     @include('layouts.navbar')
 
     <div class="container">
-        <div class="divImg mt-3 rounded"><img src="/uploads/img/produtos/{{ $produto->image }}" alt=""></div>
+        <div class="divImg rounded"><img src="/uploads/img/produtos/{{ $produto->image }}" alt=""></div>
         <div class="description mt-3">
             <h1 class="nome mb-3">{{ $produto->name }}</h1>
             <span>{{ $produto->description }}</span>

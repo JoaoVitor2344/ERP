@@ -11,8 +11,8 @@
         <div class="mt-5 text-center"><h1 class="bemVindo">Bem vindo</h1></div>
         <form class="mt-5" id="formLogin" action="login" method="post">
             @csrf
-            <input class="mb-4" type="email" name="email" placeholder="E-mail">
-            <input class="mb-2" type="password" name="password" placeholder="Senha">
+            <input class="mb-4" type="email" name="email" placeholder="E-mail" value="joaovitorb2345@gmail.com">
+            <input class="mb-2" type="password" name="password" placeholder="Senha" value="123">
             <div class="mb-2"><a class="link">Esqueceu a senha?</a></div>
             <button class="btn-principal btn-acessar mb-2">Acessar</button>
         </form>

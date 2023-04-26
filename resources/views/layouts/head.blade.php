@@ -11,11 +11,4 @@
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 
-<script>
-    $(function() {
-        $(document).ready(function() {
-            let heightNavBar = $(".nav-bar").css("height");
-            $(".container").css("margin-top", heightNavBar);
-        });
-    }, { passive: true });
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
