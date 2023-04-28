@@ -27,7 +27,6 @@ Route::prefix('login')->name('login.')->group(function () {
 
 // Rotas protegidas - verificam se usuário está autenticado
 Route::middleware(['auth'])->group(function () {
-
     // Rota home
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
@@ -44,6 +43,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/', [ProfileController::class, 'show'])->name('show');
         Route::post('/', [ProfileController::class, 'update'])->name('update');
     });
+
+    Route::get("cadastro-cliente", [CadastroController::class, "index"]);
+    Route::get("cadastro-fornecedor", [CadastroFornecedorController::class, "index"]);
+    Route::get("cadastro-produto", [CadastroProdutosController::class, "index"]);
 });
 
 // Rota fallback - redireciona para home caso a rota não exista
