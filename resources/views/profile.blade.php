@@ -10,7 +10,7 @@
     <div class="container text-center">
         <div class="mb-5" id="divImage">
             <img class="img-fluid {{ (!isset($user->image)) ? 'd-none' : '' }}" id="image" src="{{ (isset($user->image)) ? assets('uploads/profile/$user->image') : '' }}">
-            <i class="fas fa-circle-user {{ (isset($user->image)) ? 'd-none' : '' }}" id="icon"></i>
+            <i class="fas fa-user-circle {{ (isset($user->image)) ? 'd-none' : '' }}" id="icon"></i>
         </div>
         <form action="/profile" method="post" enctype="multipart/form-data">
             @csrf

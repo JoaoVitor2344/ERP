@@ -1,0 +1,34 @@
+
+.produtos {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+
+.produto {
+    width: 45%;
+    min-height: 150px;
+    height: 100%;
+
+    background-color: var(--main-color3);
+    text-align: center;
+    padding: 10px;
+}
+.produto a {
+    text-decoration: none;
+    color: black;
+}
+
+.produto .divImg {
+    background-color: white;
+    min-height: 100px;
+}
+.produto .divName {
+    display: flex;
+    flex-direction: column;
+    min-height: 50px;
+
+    font-size: 18px;
+    font-weight: 600;
+}

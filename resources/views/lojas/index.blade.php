@@ -3,7 +3,7 @@
 <head>
     @include('layouts.head')
 
-    <link rel="stylesheet" href="assets/css/lojas.css">
+    <link rel="stylesheet" href="/assets/css/lojas.css">
 </head>
 <body>
     @include('layouts.navbar')

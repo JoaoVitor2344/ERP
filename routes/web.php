@@ -23,7 +23,7 @@ Route::prefix('login')->name('login.')->group(function () {
     Route::post('/', [LoginController::class, 'show'])->name('show')
     ->where('email', '[A-Za-z]+')
     ->where('password', '[A-Za-z]+');
-});
+})->name('login');
 
 // Rotas protegidas - verificam se usuário está autenticado
 Route::middleware(['auth'])->group(function () {
