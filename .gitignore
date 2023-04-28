@@ -1,19 +1,17 @@
-/.phpunit.cache
-/node_modules
-/public/build
-/public/hot
-/public/storage
-/storage/*.key
-/vendor
-.env
-.env.backup
-.env.production
-.phpunit.result.cache
-Homestead.json
-Homestead.yaml
-auth.json
-npm-debug.log
-yarn-error.log
-/.fleet
-/.idea
-/.vscode
+# Arquivos de log
+/storage/*.log
+/storage/logs/*.log
+
+# Arquivos de cache
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/testing/*
+/storage/framework/views/*
+
+# Arquivos gerados pelo composer
+/vendor/
+/composer.lock
+
+# Arquivos gerados pelo NPM ou Yarn
+/node_modules/
+/yarn-error.log
