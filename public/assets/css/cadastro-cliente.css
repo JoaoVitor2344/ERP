@@ -1,0 +1,144 @@
+
+body {
+    background: rgb(5,52,78);
+    background: linear-gradient(0deg, rgba(5,52,78,1) 2%, rgba(28,155,226,1) 39%, rgba(28,155,226,1) 100%);
+    /* display: flex;
+    flex-direction: column; */
+    justify-content: space-between;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+
+    min-height: 100vh;
+}
+
+
+/* .perfil-icon {
+width: 200px;
+height: 200px;
+background-color: white;
+background-image: url();
+background-size: cover;
+border-radius: 50%;
+
+
+} */
+
+.perfil {
+
+    background-color: white;
+    border-radius: 100%;
+
+    font-size: 20px;
+    width: 200px;
+    height: 200px;
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+    display: flex; 
+    align-items: center; 
+}
+
+
+.perfil-icon {
+    width: 100%;
+    font-size: 100px;
+    color: black;
+    text-align: center;
+    line-height: 50px;
+}
+
+.cadastro {
+    padding-left: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+
+    text-decoration: none;
+}
+
+.seta-cadastro {
+    margin-top: 15px;
+    padding-left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input {
+    width: 100%;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+
+    border: none;
+    outline: none;
+    border-radius: 50px;
+
+    color: grey;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.link {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.btn-principal {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: 600;
+    
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    
+    background-color: var(--main-color);
+    color: white;
+}
+
+footer {
+    /* position: fixed;
+    bottom: 0; */
+
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+
+    background-color: var(--main-color2);
+}
+
+footer i {
+    color: black;
+    background-color: white;
+    border-radius: 100%;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.btn-acessar {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: 600;
+    
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    
+    background-color: #1C9BE2;
+    color: white;
+}

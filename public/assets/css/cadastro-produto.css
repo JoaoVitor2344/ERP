@@ -1,4 +1,4 @@
-/* body {
+body {
     background-color: white;
 }
 
@@ -16,31 +16,19 @@
     background-color: var(--main-color);
 }
 
-.nav-bar div {
-    width: 50%;
+form {
+    width: 100%;
+    padding: 10px;
 }
 
-.nav-bar .profile {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-}
+.quadrado {
+    margin-top: 90px;
+    width: 100%;
+    height: 200px;
+    background-color: #1c99e2ad;
+  }
 
-.nav-bar span {
-    font-size: 18px;
-    font-weight: 600;
-    color: white;
-}
-
-.nav-bar .fa-user {
-    background-color: white;
-    border-radius: 100%;
-    padding: 20px;
-    font-size: 20px;
-}
-
-
-.btn-acessar {
+.btn-cadastrar {
     width: 100%;
     padding: 10px 0;
     font-size: 18px;
@@ -54,50 +42,6 @@
     background-color: var(--main-color);
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-
-    min-height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    width: 100%;
-    padding: 10px;
-
-    background-color: var(--main-color2);
+form input {
+    background-color: #1c99e262 !important;
 }
-
-footer i {
-    background-color: blue;
-    border-radius: 100%;
-    padding: 20px;
-    font-size: 20px;
-} */
-
-.teste {
-
-    background-color: white;
-    font-size: 20px;    
-    width: 500px;
-    height: 300px;
-    display: block; 
-    margin-left: auto;
-    margin-right: auto;
-    display: flex; 
-    align-items: center; 
-}
-
-
-.perfil-icon {
-    width: 100%;
-    font-size: 50px;
-    color: black;
-    text-align: center;
-    line-height: 50px;
-}
- 
- 
- 
- 

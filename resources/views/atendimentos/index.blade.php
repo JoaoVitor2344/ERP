@@ -7,19 +7,15 @@
 </head>
 <body>
     @include('layouts.navbar')
-
     <div class="container">
-        <div class="atendimentos mt-3">
-            @foreach($atendimentos as $i => $loja)
-                <div class="loja rounded mb-3 <?= ($i % 2 == 0) ? 'me-3' : '' ?>">
-                    <a href="atendimentos/{{ $loja->id }}">
-                        <div class="divImg rounded-top"><img src="" alt=""></div>
-                        <div class="divName mt-2"><span>{{ $atendimento->name }}</span></div>
-                    </a>
-                </div>
-            @endforeach
-        </div>
+        <div style="padding: 30px; border: 20px solid rgb(5,52,78);"><img class="imagem" src="/assets/image/mapa.png"></img></div>  
     </div>
+    <p>Pedido # <br>
+    Status : A caminho <br>
+    N° do Pedido : #12345 <br>
+    Produto : Produto xyz <br>
+    Quantidade : 001 <br>
+    Valor : R$ 99,99 <br>
 
     @include('layouts.footer')
 </body>

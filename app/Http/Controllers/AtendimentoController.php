@@ -9,7 +9,7 @@ class AtendimentoController extends Controller
     public function index()
     {
         $atendimentos = DB::table('atendimentos')->get();
-        return view('atendimento', ['atendimentos' => $atendimentos]);
+        return view('atendimentos.index', ['atendimentos' => $atendimentos]);
     }
     
     public function show(string $id)
