@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\api\UsersController;
+use App\Http\Controllers\CadastroController;
+use App\Http\Controllers\CadastroFornecedorController;
+use App\Http\Controllers\CadastroProdutosController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LojasController;
@@ -8,14 +12,9 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-// Rota raiz - verifica se usuário está autenticado e redireciona para home ou login
-Route::get('/', function () {
-    if (Auth::check()) {
-        return redirect()->route('home');
-    } else {
-        return redirect()->route('login');
-    }
-})->name('index');
+// Route::prefix('/api')->name('api.')->group(function () {
+//     Route::get('/users', [UsersController::class, 'index'])->name('index');
+// });
 
 // Rota de login
 Route::prefix('login')->name('login.')->group(function () {
@@ -23,7 +22,7 @@ Route::prefix('login')->name('login.')->group(function () {
     Route::post('/', [LoginController::class, 'show'])->name('show')
     ->where('email', '[A-Za-z]+')
     ->where('password', '[A-Za-z]+');
-})->name('login');
+});
 
 // Rotas protegidas - verificam se usuário está autenticado
 Route::middleware(['auth'])->group(function () {
@@ -48,10 +47,4 @@ Route::middleware(['auth'])->group(function () {
     Route::get("cadastro-fornecedor", [CadastroFornecedorController::class, "index"]);
     Route::get("cadastro-produto", [CadastroProdutosController::class, "index"]);
 });
-
-// Rota fallback - redireciona para home caso a rota não exista
-Route::fallback(function() {
-    return redirect()->route('home');
-});
-
 ?>
