@@ -15,13 +15,13 @@
 @include('layouts.navbar')
 <div class="quadrado"></div>
 <div class="container">
-        <form class="formLogin" id="formCadastro" action="login" method="post">
+        <form class="formLogin" id="formCadastro" action="/cadastro-produto" method="post">
             @csrf
-            <input class="mb-3" type="string" name="string" placeholder="Nome do Produto">
-            <input class="mb-3" type="number" name="number" placeholder="Preço do Produto">
-            <input class="mb-3" type="string" name="string" placeholder="Tipo">
-            <input class="mb-3" type="string" name="string" placeholder="Descrição">
-            <button class="btn-cadastrar">teste</button>
+            <input class="mb-3" type="tel" name="id_loja" placeholder="id">
+            <input class="mb-3" type="text" name="nome" placeholder="Nome do Produto">
+            <input class="mb-3" type="number" name="preco" placeholder="Preço do Produto">
+            <input class="mb-3" type="text" name="descricao" placeholder="Descrição">
+            <button class="btn-cadastrar">Cadastrar</button>
         </form>
     </div>
 </body>

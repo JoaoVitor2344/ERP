@@ -16,9 +16,9 @@
         <div class="perfil"><i class="perfil-icon fa-solid fa-user"></i></div>
     </div>
     <div class="container">
-        <form class="formLogin" id="formCadastro" action="login" method="post">
+        <form class="formLogin" id="formCadastro" action="/cadastro-cliente" method="post">
             @csrf
-            <input class="mb-4" type="string" name="string" placeholder="Nome Completo">
+            <input class="mb-4" type="text" name="name" placeholder="Nome Completo">
             <input class="mb-4" type="number" name="number" placeholder="CPF">
             <input class="mb-4" type="email" name="email" placeholder="E-mail">
             <input class="mb-4" type="number" name="number" placeholder="Telefone">
