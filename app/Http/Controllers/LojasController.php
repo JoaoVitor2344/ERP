@@ -11,13 +11,13 @@ class LojasController extends Controller
 {
     public function index()
     {
-        $lojas = DB::table('lojas')->get();
+        $lojas = requestGET("lojas");
         return view('lojas.index', ['lojas' => $lojas]);
     }
     
     public function show(string $id)
     {
-        $produtos = DB::table('produtos')->where('loja_id', $id)->get();
+        $produtos = requestGET("produtos/$id");
         return view('lojas.show', ['produtos' => $produtos]);
     }
 

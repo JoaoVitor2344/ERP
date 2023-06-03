@@ -13,47 +13,39 @@ use App\Http\Controllers\CadastroLocalizacaoController;
 use App\Http\Controllers\DadosFornController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
-
-// Rota raiz - verifica se usuário está autenticado e redireciona para home ou login
-Route::get('/', function () {
-    if (Auth::check()) {
-        // return redirect()->route('home');
-    } else {
-        // return route('login.index');
-    }
-})->name('index');
+use App\Http\Controllers\PedidoController;
 
 // Rota de login
 Route::prefix('login')->name('login.')->group(function () {
-    Route::get('/', [LoginController::class, 'index'])->name('index');
-    Route::post('/', [LoginController::class, 'show'])->name('show')
-    ->where('email', '[A-Za-z]+')
-    ->where('password', '[A-Za-z]+');
+    Route::get('/{tipo}', [LoginController::class, 'index'])->name('index');
+    Route::post('/', [LoginController::class, 'show'])->name('show');
 });
 
-// Rotas protegidas - verificam se usuário está autenticado
-Route::middleware(['auth'])->group(function () {
-    
-    // Rota home
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
-    
-    // Rotas de lojas
-    Route::prefix('lojas')->name('lojas.')->group(function () {
-        Route::get('/', [LojasController::class, 'index'])->name('index');
-        Route::post('/', [LojasController::class, 'cadastro'])->name('cadastro');
-        Route::get('/{id}', [LojasController::class, 'show'])->name('show');
-    });
-    
-    
-    // Rotas de produtos
-    Route::get('/produto/{id}', [ProdutoController::class, 'index'])->name('produto');
-    
-    Route::prefix('profile')->name('profile.')->group(function () {
-        Route::get('/', [ProfileController::class, 'show'])->name('show');
-        Route::post('/', [ProfileController::class, 'update'])->name('update');
-    });
-    
+// Rota home
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+// Rotas de lojas
+Route::prefix('lojas')->name('lojas.')->group(function () {
+    Route::get('/', [LojasController::class, 'index'])->name('index');
+    Route::post('/', [LojasController::class, 'cadastro'])->name('cadastro');
+
+    Route::get('/{id}', [LojasController::class, 'show'])->name('show');
+});
+
+// Rotas de produtos
+Route::prefix("/produtos")->name("produtos.")->group(function () {
+    Route::get("/{id}", [ProdutoController::class, "index"])->name("index");
+    Route::post("/", [ProdutoController::class, "pedido"])->name("cadastro");
+});
+
+Route::prefix('/pedidos')->name('pedidos.')->group(function () {
+    Route::get('/', [PedidoController::class, 'index'])->name('index');
+    Route::get('/{id}', [PedidoController::class, 'show'])->name('show');
+});
+
+Route::prefix('profile')->name('profile.')->group(function () {
+    Route::get('/', [ProfileController::class, 'show'])->name('show');
+    Route::post('/', [ProfileController::class, 'update'])->name('update');
 });
 
 Route::get("cadastro-cliente", [CadastroController::class, "index"]);

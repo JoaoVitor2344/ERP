@@ -9,12 +9,12 @@
     @include('layouts.navbar')
 
     <div class="container">
-        <div class="lojas">
+        <div class="row lojas gap-3">
             @foreach($lojas as $i => $loja)
-                <div class="loja rounded mb-3 <?= ($i % 2 == 0) ? 'me-3' : '' ?>">
+                <div class="loja rounded">
                     <a href="lojas/{{ $loja->id }}">
                         <div class="divImg rounded-top"><img src="" alt=""></div>
-                        <div class="divName mt-2"><span>{{ $loja->name }}</span></div>
+                        <div class="divName mt-2"><span>{{ $loja->nome }}</span></div>
                     </a>
                 </div>
             @endforeach

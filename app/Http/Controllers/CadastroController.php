@@ -14,9 +14,11 @@ class CadastroController extends Controller
     public function cadastro(Request $request)
     {
         $validation = Validator::make($request->all(), [
-            'name' => 'required|min:0|max:255',
-            'email'      => 'required|email|min:0',
-            'password'  => 'required|min:3|max:128',
+            'nome' => 'required',
+            'cpf' => 'required',
+            'email' => 'required',
+            'telefone' => 'required',
+            'senha'  => 'required',
         ]);
         
         if ($validation->fails()) {
@@ -24,36 +26,16 @@ class CadastroController extends Controller
         }
          
         // Converter os dados em formato JSON
-        $jsonData = json_encode($request->all());
-        
-        // Inicializar uma sessão cURL
-        $curl = curl_init();
-        
-        // Definir a URL de destino
-        $url = "https://4815-2804-7f4-538e-b2b3-db1-8d78-c05e-8fa.ngrok-free.app/api/users";
-        
-        // Definir as opções da solicitação cURL
-        curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_POST, true);
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $jsonData);
-        curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-            'Content-Type: application/json',
-            'Content-Length: ' . strlen($jsonData)
-        ));
-        
-        // Enviar a solicitação cURL e obter a resposta
-        $response = curl_exec($curl);
-        
-        // Verificar se ocorreu algum erro na solicitação
-        if (curl_errno($curl)) {
-            $error = curl_error($curl);
-            // Tratar o erro de acordo com a sua necessidade
-            // Por exemplo, exibir uma mensagem de erro ou registrar em um arquivo de log
-            die("Erro na solicitação cURL: " . $error);
-        }
-        
-        // Fechar a sessão cURL
-        curl_close($curl);   
+        $jsonData = json_encode([
+            'nome' => $request->nome,
+            'cpf' => $request->cpf,
+            'email' => $request->email,
+            'telefone' => $request->telefone,
+            'senha' => $request->senha,
+        ]);
+
+        requestPOST('users', $jsonData);
+
+        return redirect()->route('login.index');
     }
 }

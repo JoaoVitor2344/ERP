@@ -12,11 +12,11 @@
         <div class="produtos">
             @foreach($produtos as $i => $produto)
                 <div class="produto rounded col-6 mb-2 <?= ($i % 2 == 0) ? 'me-2' : '' ?>">
-                    <a href="/produto/{{ $produto->id }}">
+                    <a href="/produtos/{{ $produto->id }}">
                         <div class="divImg rounded-top"><img src="" alt=""></div>
                         <div class="divName mt-2">
-                            {{ $produto->name }} <br>
-                            R$ {{ $produto->price }}
+                            {{ $produto->nome }} <br>
+                            R$ {{ $produto->preco }}
                         </div>
                     </a>
                 </div>

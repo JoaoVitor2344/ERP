@@ -8,16 +8,30 @@
     @include('layouts.navbar')
 
     <div class="topicos">
-        @foreach($topicos as $i => $topico)
-            <div class="divTopico mb-4 position-relative">
-                <a href="{{ strtolower($topico->name) }}">
-                    <div class="topico <?= ($i % 2 == 0) ? 'end-0 rounded-start' : 'start-0 rounded-end' ?>">
-                        <div>{{ $topico->name }}</div>
-                        <i class="fa-solid {{ $topico->icon }}"></i>
-                    </div>
-                </a>
-            </div>
-        @endforeach
+        <div class="divTopico mb-4 position-relative">
+            <a href="">
+                <div class="topico end-0 rounded-start">
+                    <div>Pedidos</div>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+            </a>
+        </div>
+        <div class="divTopico mb-4 position-relative">
+            <a href="/lojas">
+                <div class="topico start-0 rounded-end">
+                    <div>Lojas</div>
+                    <i class="fa-solid fa-truck"></i>
+                </div>
+            </a>
+        </div>
+        <div class="divTopico mb-4 position-relative">
+            <a href="">
+                <div class="topico end-0 rounded-start">
+                    <div>Registro de Conversas</div>
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+            </a>
+        </div>
     </div>
 
     @include('layouts.footer')

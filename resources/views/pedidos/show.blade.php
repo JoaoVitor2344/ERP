@@ -4,24 +4,34 @@
     @include('layouts.head')
 
     <link rel="stylesheet" href="assets/css/produto.css">
+
+    <style>
+        .description {
+            display: flex;
+            flex-direction: column;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .divImg {
+            padding: 15px;
+            background-color: var(--main-color3);
+        }
+    </style>
 </head>
 <body>
     @include('layouts.navbar')
 
     <div class="container">
-        <div class="divImg rounded"><img src="/uploads/img/produtos/{{ $produto->imagem }}" alt=""></div>
+        <div class="divImg rounded"><img class="img-fluid" src="/assets/image/mapa.png" alt=""></div>
         <div class="description mt-3">
-            <h1 class="nome mb-3">{{ $produto->nome }}</h1>
-            <span>{{ $produto->descricao }}</span>
-            <span>R$ {{ $produto->preco }}</span>
+            <span>Pedido #{{ $pedido->id }}</span>
+            <span>Status: {{ $pedido->status }}</span>
+            <span>Produto: <a href="/produtos/{{ $pedido->produto->id }}">{{ $pedido->produto->nome }}</a></span>
+            <span>Valor: R$ {{ $pedido->produto->preco }}</span>
         </div>
-        <div class="divBtn"><button class="btn-principal btn-fazer-pedido mt-3" id="btn-pricipal">Fazer Pedido</button></div>
-
-        <form action="/produtos" method="POST">
-            @csrf
-            <input type="hidden" name="id_produto" value="{{ $produto->id }}">
-            <input type="hidden" name="preco" value="{{ $produto->preco }}">
-        </form>
+        <div class="divBtn"><button class="btn-principal bg-success bg-gradient mt-3">Contactar o Vendedor</button></div>
+        <div class="divBtn"><button class="btn-principal bg-danger bg-gradient mt-3">Cancelar</button></div>
     </div>
 
     @include('layouts.footer')

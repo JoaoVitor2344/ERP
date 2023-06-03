@@ -15,13 +15,13 @@
         <div class="perfil"><i class="perfil-icon fa-solid fa-user"></i></div>
     </div>
     <div class="container">
-        <form class="formLogin" id="formCadastro" action="login" method="post">
+        <form class="formLogin" id="formCadastro" action="/cadastro-fornecedor" method="post">
             @csrf
-            <input class="mb-4" type="string" name="string" placeholder="Nome Completo">
-            <input class="mb-4" type="number" name="number" placeholder="CNPJ">
+            <input class="mb-4" type="text" name="nome" placeholder="Nome Completo">
+            <input class="mb-4" type="tel" name="cnpj" placeholder="CNPJ">
             <input class="mb-4" type="email" name="email" placeholder="E-mail">
-            <input class="mb-4" type="number" name="number" placeholder="Telefone">
-            <input class="mb-2" type="password" name="password" placeholder="Senha">
+            <input class="mb-4" type="tel" name="telefone" placeholder="Telefone">
+            <input class="mb-2" type="password" name="senha" placeholder="Senha">
             <button class="btn-acessar">Cadastrar</button>
         </form>
     </div>
