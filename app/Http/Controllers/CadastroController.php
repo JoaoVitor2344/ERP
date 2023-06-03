@@ -30,7 +30,7 @@ class CadastroController extends Controller
         $curl = curl_init();
         
         // Definir a URL de destino
-        $url = "https://eedc-2804-7f4-5492-c1cf-5411-1d0-2543-8bf0.ngrok-free.app/api/users";
+        $url = "https://4815-2804-7f4-538e-b2b3-db1-8d78-c05e-8fa.ngrok-free.app/api/users";
         
         // Definir as opções da solicitação cURL
         curl_setopt($curl, CURLOPT_URL, $url);
