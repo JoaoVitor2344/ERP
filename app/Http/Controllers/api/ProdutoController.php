@@ -17,6 +17,10 @@ class ProdutoController extends Controller
         return Produto::all();
     }
 
+    public function show($id) {
+        return Produto::where('id_loja', $id)->get();
+    }
+
     /**
      * Store a newly created resource in storage.
      */

@@ -21,7 +21,13 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        User::create($request->all());
+        User::create([
+            'nome' => $request->nome,
+            'cpf' => $request->cpf,
+            'email' => $request->email,
+            'telefone' => $request->telefone,
+            'senha' => $request->senha,
+        ]);
     }
 
     /**
