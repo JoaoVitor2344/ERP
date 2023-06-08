@@ -17,16 +17,20 @@ class EnderecosController extends Controller
         return Endereco::all();
     }
 
+    public function show(string $id) 
+    {
+        return Endereco::where('id2', $id)->first();
+    }
+
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
         $validation = Validator::make($request->all(), [
-            'id_cliente_fornecedor' => 'required',
+            'id2' => 'required',
             'cep' => 'required',
             'rua' => 'required',
-            'bairro' => 'required',
             'cidade' => 'required',
             'estado' => 'required',
             'complemento' => 'required'
