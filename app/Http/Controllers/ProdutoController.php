@@ -40,6 +40,8 @@ class ProdutoController extends Controller
 
         requestPOST("pedidos", $jsonData);
 
-        return redirect()->route('pedido');
+        $pedidos = requestGET("pedidos");
+
+        return redirect()->route('pedidos.index');
     }
 }

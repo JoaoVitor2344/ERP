@@ -9,6 +9,26 @@
 
 <script src="https://kit.fontawesome.com/d07f089424.js" crossorigin="anonymous"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+@if (session('errors'))
+    <script>
+        Swal.fire({
+            title: 'Erro!',
+            text: '{{ session("errors") }}',
+            icon: 'error',
+        });
+    </script>
+@endif
+
+@if (session('message'))
+    <script>
+        Swal.fire({
+            title: 'Erro!',
+            text: '{{ session("message") }}',
+            icon: 'error',
+        });
+    </script>
+@endif

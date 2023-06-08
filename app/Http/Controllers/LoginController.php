@@ -28,6 +28,7 @@ class LoginController extends Controller
             foreach ($usuarios as $usuario) {
                 if ($usuario->email == $request->email && $usuario->senha == $request->senha) {
                     $_SESSION["usuario"] = $usuario;
+
                     return redirect()->route("home");
                 }
             }

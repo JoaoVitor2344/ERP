@@ -11,7 +11,7 @@ class CadastroController extends Controller
         return view("cadastro-cliente");
     }
     
-    public function cadastro(Request $request)
+    public function store(Request $request)
     {
         $validation = Validator::make($request->all(), [
             'nome' => 'required',
@@ -36,6 +36,6 @@ class CadastroController extends Controller
 
         requestPOST('users', $jsonData);
 
-        return redirect()->route('login.index');
+        return redirect()->route('login.index', 'cliente');
     }
 }

@@ -9,7 +9,9 @@ class ProfileController extends Controller
 {
     public function show()
     {
-        $user = Auth::user();
+        session_start();
+
+        $user = $_SESSION['usuario'];
         return view('profile', ['user' => $user]);
     }
 

@@ -1,5 +1,5 @@
 <div class="nav-bar">
-    <div class="divSair"><a><span>Sair</span></a></div>
+    <div class="divSair"><a href="/logout"><span>Sair</span></a></div>
     <div class="profile">
         <a href="/profile">
             <span class="me-2">nome</span>

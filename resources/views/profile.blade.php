@@ -17,11 +17,11 @@
             <div style="display: none;">
                 <input type="file" name="image" id="image">
             </div>
-            <input type="text" name="name" id="name" placeholder="Nome Completo">
-            <input type="tel" name="cpf" id="cpf" placeholder="CPF">
-            <input type="tel" name="phone" id="phone" placeholder="Celular">
-            <input class="mb-2" type="email" name="email" id="email" placeholder="E-mail">
-            <a class="link" href="cad_endereco">Cadastrar endereço</a>
+            <input type="text" name="name" id="name" placeholder="Nome Completo" value="{{ $user->nome }}">
+            <input type="tel" name="cpf" id="cpf" placeholder="CPF" value="{{ $user->cpf }}">
+            <input type="tel" name="phone" id="phone" placeholder="Celular" value="{{ $user->celular }}">
+            <input class="mb-2" type="email" name="email" id="email" placeholder="E-mail" value="{{ $user->email }}">
+            <a class="link" href="/cadastro-localizacao">Cadastrar endereço</a>
             <button class="btn-principal mt-3">Editar</button>
         </form>
     </div>
