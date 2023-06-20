@@ -31,6 +31,8 @@ class ComposerStaticInitd413fd36e1b135513150ac778e7fec2a
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        'c72349b1fe8d0deeedd3a52e8aa814d8' => __DIR__ . '/..' . '/mockery/mockery/library/helpers.php',
+        'ce9671a430e4846b44e1c68c7611f9f5' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'a1cfe24d14977df6878b9bf804af2d1c' => __DIR__ . '/..' . '/nunomaduro/collision/src/Adapters/Phpunit/Autoload.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '320163ac6b93aebe3dc25b60a0533d56' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/helpers.php',
@@ -112,6 +114,7 @@ class ComposerStaticInitd413fd36e1b135513150ac778e7fec2a
         'M' => 
         array (
             'Monolog\\' => 8,
+            'Mockery\\' => 8,
         ),
         'L' => 
         array (
@@ -380,6 +383,10 @@ class ComposerStaticInitd413fd36e1b135513150ac778e7fec2a
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'Mockery\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mockery/mockery/library/Mockery',
+        ),
         'League\\MimeTypeDetection\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/mime-type-detection/src',
@@ -515,19 +522,16 @@ class ComposerStaticInitd413fd36e1b135513150ac778e7fec2a
         ),
     );
 
-    public static $prefixesPsr0 = array (
-        'M' => 
-        array (
-            'Mockery' => 
-            array (
-                0 => __DIR__ . '/..' . '/mockery/mockery/library',
-            ),
-        ),
-    );
-
     public static $classMap = array (
+        'App\\Actions\\ElaborateSummary' => __DIR__ . '/..' . '/laravel/pint/app/Actions/ElaborateSummary.php',
+        'App\\Actions\\FixCode' => __DIR__ . '/..' . '/laravel/pint/app/Actions/FixCode.php',
+        'App\\Commands\\DefaultCommand' => __DIR__ . '/..' . '/laravel/pint/app/Commands/DefaultCommand.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Contracts\\PathsRepository' => __DIR__ . '/..' . '/laravel/pint/app/Contracts/PathsRepository.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Factories\\ConfigurationFactory' => __DIR__ . '/..' . '/laravel/pint/app/Factories/ConfigurationFactory.php',
+        'App\\Factories\\ConfigurationResolverFactory' => __DIR__ . '/..' . '/laravel/pint/app/Factories/ConfigurationResolverFactory.php',
+        'App\\Fixers\\LaravelPhpdocAlignmentFixer' => __DIR__ . '/..' . '/laravel/pint/app/Fixers/LaravelPhpdocAlignmentFixer.php',
         'App\\Http\\Controllers\\AtendimentoController' => __DIR__ . '/../..' . '/app/Http/Controllers/AtendimentoController.php',
         'App\\Http\\Controllers\\CadastroController' => __DIR__ . '/../..' . '/app/Http/Controllers/CadastroController.php',
         'App\\Http\\Controllers\\CadastroFornecedorController' => __DIR__ . '/../..' . '/app/Http/Controllers/CadastroFornecedorController.php',
@@ -538,6 +542,7 @@ class ComposerStaticInitd413fd36e1b135513150ac778e7fec2a
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/LoginController.php',
         'App\\Http\\Controllers\\LojasController' => __DIR__ . '/../..' . '/app/Http/Controllers/LojasController.php',
+        'App\\Http\\Controllers\\PedidoController' => __DIR__ . '/../..' . '/app/Http/Controllers/PedidoController.php',
         'App\\Http\\Controllers\\ProdutoController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProdutoController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
         'App\\Http\\Controllers\\api\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/api/UsersController.php',
@@ -551,13 +556,23 @@ class ComposerStaticInitd413fd36e1b135513150ac778e7fec2a
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
-        'App\\Models\\Models\\Usuarios' => __DIR__ . '/../..' . '/app/Models/Models/Usuarios.php',
+        'App\\Kernel' => __DIR__ . '/..' . '/laravel/pint/app/Kernel.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Output\\Concerns\\InteractsWithSymbols' => __DIR__ . '/..' . '/laravel/pint/app/Output/Concerns/InteractsWithSymbols.php',
+        'App\\Output\\ProgressOutput' => __DIR__ . '/..' . '/laravel/pint/app/Output/ProgressOutput.php',
+        'App\\Output\\SummaryOutput' => __DIR__ . '/..' . '/laravel/pint/app/Output/SummaryOutput.php',
+        'App\\Project' => __DIR__ . '/..' . '/laravel/pint/app/Project.php',
+        'App\\Providers\\ActionsServiceProvider' => __DIR__ . '/..' . '/laravel/pint/app/Providers/ActionsServiceProvider.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
+        'App\\Providers\\CommandsServiceProvider' => __DIR__ . '/..' . '/laravel/pint/app/Providers/CommandsServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
+        'App\\Providers\\RepositoriesServiceProvider' => __DIR__ . '/..' . '/laravel/pint/app/Providers/RepositoriesServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Repositories\\ConfigurationJsonRepository' => __DIR__ . '/..' . '/laravel/pint/app/Repositories/ConfigurationJsonRepository.php',
+        'App\\Repositories\\GitPathsRepository' => __DIR__ . '/..' . '/laravel/pint/app/Repositories/GitPathsRepository.php',
+        'App\\ValueObjects\\Issue' => __DIR__ . '/..' . '/laravel/pint/app/ValueObjects/Issue.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
         'Brick\\Math\\BigInteger' => __DIR__ . '/..' . '/brick/math/src/BigInteger.php',
@@ -1265,6 +1280,7 @@ class ComposerStaticInitd413fd36e1b135513150ac778e7fec2a
         'Faker\\Provider\\nl_NL\\PhoneNumber' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/PhoneNumber.php',
         'Faker\\Provider\\nl_NL\\Text' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Text.php',
         'Faker\\Provider\\pl_PL\\Address' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/pl_PL/Address.php',
+        'Faker\\Provider\\pl_PL\\Color' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/pl_PL/Color.php',
         'Faker\\Provider\\pl_PL\\Company' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/pl_PL/Company.php',
         'Faker\\Provider\\pl_PL\\Internet' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/pl_PL/Internet.php',
         'Faker\\Provider\\pl_PL\\LicensePlate' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/pl_PL/LicensePlate.php',
@@ -3161,7 +3177,6 @@ class ComposerStaticInitd413fd36e1b135513150ac778e7fec2a
         'League\\MimeTypeDetection\\GeneratedExtensionToMimeTypeMap' => __DIR__ . '/..' . '/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php',
         'League\\MimeTypeDetection\\MimeTypeDetector' => __DIR__ . '/..' . '/league/mime-type-detection/src/MimeTypeDetector.php',
         'League\\MimeTypeDetection\\OverridingExtensionToMimeTypeMap' => __DIR__ . '/..' . '/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php',
-        'Mockery' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegrationAssertPostConditions' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegrationAssertPostConditions.php',
         'Mockery\\Adapter\\Phpunit\\MockeryTestCase' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php',
@@ -3182,6 +3197,7 @@ class ComposerStaticInitd413fd36e1b135513150ac778e7fec2a
         'Mockery\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Exception/InvalidArgumentException.php',
         'Mockery\\Exception\\InvalidCountException' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Exception/InvalidCountException.php',
         'Mockery\\Exception\\InvalidOrderException' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Exception/InvalidOrderException.php',
+        'Mockery\\Exception\\MockeryExceptionInterface' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Exception/MockeryExceptionInterface.php',
         'Mockery\\Exception\\NoMatchingExpectationException' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Exception/NoMatchingExpectationException.php',
         'Mockery\\Exception\\RuntimeException' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Exception/RuntimeException.php',
         'Mockery\\Expectation' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Expectation.php',
@@ -3200,6 +3216,7 @@ class ComposerStaticInitd413fd36e1b135513150ac778e7fec2a
         'Mockery\\Generator\\StringManipulationGenerator' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Generator/StringManipulationGenerator.php',
         'Mockery\\Generator\\StringManipulation\\Pass\\AvoidMethodClashPass' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/AvoidMethodClashPass.php',
         'Mockery\\Generator\\StringManipulation\\Pass\\CallTypeHintPass' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/CallTypeHintPass.php',
+        'Mockery\\Generator\\StringManipulation\\Pass\\ClassAttributesPass' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/ClassAttributesPass.php',
         'Mockery\\Generator\\StringManipulation\\Pass\\ClassNamePass' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/ClassNamePass.php',
         'Mockery\\Generator\\StringManipulation\\Pass\\ClassPass' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/ClassPass.php',
         'Mockery\\Generator\\StringManipulation\\Pass\\ConstantsPass' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/ConstantsPass.php',
@@ -3230,6 +3247,8 @@ class ComposerStaticInitd413fd36e1b135513150ac778e7fec2a
         'Mockery\\Matcher\\Ducktype' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/Ducktype.php',
         'Mockery\\Matcher\\HasKey' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/HasKey.php',
         'Mockery\\Matcher\\HasValue' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/HasValue.php',
+        'Mockery\\Matcher\\IsEqual' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/IsEqual.php',
+        'Mockery\\Matcher\\IsSame' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/IsSame.php',
         'Mockery\\Matcher\\MatcherAbstract' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php',
         'Mockery\\Matcher\\MultiArgumentClosure' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php',
         'Mockery\\Matcher\\MustBe' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/MustBe.php',
@@ -4239,8 +4258,8 @@ class ComposerStaticInitd413fd36e1b135513150ac778e7fec2a
         'PHPUnit\\TextUI\\XmlConfiguration\\MoveAttributesFromFilterWhitelistToCoverage' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/MoveAttributesFromFilterWhitelistToCoverage.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\MoveAttributesFromRootToCoverage' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/MoveAttributesFromRootToCoverage.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\MoveCoverageDirectoriesToSource' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/MoveCoverageDirectoriesToSource.php',
-        'PHPUnit\\TextUI\\XmlConfiguration\\MoveWhitelistDirectoriesToCoverage' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/MoveWhitelistDirectoriesToCoverage.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\MoveWhitelistExcludesToCoverage' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/MoveWhitelistExcludesToCoverage.php',
+        'PHPUnit\\TextUI\\XmlConfiguration\\MoveWhitelistIncludesToCoverage' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/MoveWhitelistIncludesToCoverage.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\PHPUnit' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/PHPUnit.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\RemoveBeStrictAboutResourceUsageDuringSmallTestsAttribute' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RemoveBeStrictAboutResourceUsageDuringSmallTestsAttribute.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\RemoveBeStrictAboutTodoAnnotatedTestsAttribute' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RemoveBeStrictAboutTodoAnnotatedTestsAttribute.php',
@@ -6365,7 +6384,6 @@ class ComposerStaticInitd413fd36e1b135513150ac778e7fec2a
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitd413fd36e1b135513150ac778e7fec2a::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitd413fd36e1b135513150ac778e7fec2a::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitd413fd36e1b135513150ac778e7fec2a::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitd413fd36e1b135513150ac778e7fec2a::$classMap;
 
         }, null, ClassLoader::class);

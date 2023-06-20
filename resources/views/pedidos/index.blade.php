@@ -43,8 +43,9 @@
                     </div>
                 </a>
                 @endforeach
+            @else
+                <h1 class="text-center">Nenhum Pedido Cadastrado</h1>
             @endif
-            <h1 class="text-center">Nenhum Pedido Cadastrado</h1>
         </div>
     </div>
 

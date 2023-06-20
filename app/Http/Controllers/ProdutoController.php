@@ -33,7 +33,7 @@ class ProdutoController extends Controller
         }
 
         $jsonData = json_encode([
-            'id_cliente' => $_SESSION['usuario']->id,
+            'id_cliente' => $_SESSION['user']->id,
             'id_produto' => $request->id_produto,
             'preco' => $request->preco,
         ]);

@@ -12,7 +12,7 @@
         <div class="divTopico mb-4 position-relative">
             <a href="/pedidos">
                 <div class="topico end-0 rounded-start">
-                    <div>Pedidos</div>
+                    <div>{{ ($tipo == 'fornecedor') ? 'Serviços' : 'Pedidos' }}</div>
                     <i class="fa-solid fa-cart-shopping"></i>
                 </div>
             </a>
@@ -20,11 +20,12 @@
         <div class="divTopico mb-4 position-relative">
             <a href="/lojas">
                 <div class="topico start-0 rounded-end">
-                    <div>Lojas</div>
+                    <div>{{ ($tipo == 'fornecedor') ? 'Registro de Atendimentos' : 'Lojas' }}</div>
                     <i class="fa-solid fa-truck"></i>
                 </div>
             </a>
         </div>
+        @if ($tipo == 'cliente')
         <div class="divTopico mb-4 position-relative">
             <a href="">
                 <div class="topico end-0 rounded-start">
@@ -33,6 +34,7 @@
                 </div>
             </a>
         </div>
+        @endif
     </div>
 
     @include('layouts.footer')
