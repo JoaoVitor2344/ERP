@@ -21,11 +21,11 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        User::create([
+        return User::create([
             'nome' => $request->nome,
             'cpf' => $request->cpf,
             'email' => $request->email,
-            'telefone' => $request->telefone,
+            'celular' => $request->celular,
             'senha' => $request->senha,
         ]);
     }
@@ -44,7 +44,13 @@ class UsersController extends Controller
     public function update(Request $request, string $id)
     {
         $user = User::findOrFail($id);
-        $user->update($request->all());
+        
+        $user->nome = $request->nome;
+        $user->cpf = $request->cpf;
+        $user->email = $request->email;
+        $user->celular = $request->celular;
+        
+        return $user->save();
     }
 
     /**

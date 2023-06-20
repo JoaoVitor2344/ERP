@@ -51,10 +51,8 @@ class EnderecosController extends Controller
     public function update(Request $request, string $id)
     {
         $validation = Validator::make($request->all(), [
-            'id_cliente_fornecedor' => 'required',
             'cep' => 'required',
             'rua' => 'required',
-            'bairro' => 'required',
             'cidade' => 'required',
             'estado' => 'required',
             'complemento' => 'required'
@@ -64,8 +62,14 @@ class EnderecosController extends Controller
             return response()->json($validation->errors(), 400);
         }
 
-        $endereco = Endereco::find($id);
-        $endereco->update($request->all());
+        $endereco = Endereco::where('id2', $id)->first();
+        $endereco->cep = $request->cep;
+        $endereco->rua = $request->rua;
+        $endereco->cidade = $request->cidade;
+        $endereco->estado = $request->estado;
+        $endereco->complemento = $request->complemento;
+
+        $endereco->save();
 
         return response()->json($endereco, 200);
     }
