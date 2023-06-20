@@ -11,13 +11,19 @@ class PedidoController extends Controller
      */
     public function index()
     {
+        session_start();
+
         $pedidos = requestGET("pedidos");
         $produtos = requestGET("produtos");
 
+        $user = $_SESSION['user'];
+
         foreach($pedidos as $pedido) {
             foreach($produtos as $produto) {
-                if($pedido->id_produto == $produto->id) {
-                    $pedido->produto = $produto;
+                if($pedido->id_cliente == $user->id) {
+                    if($pedido->id_produto == $produto->id) {
+                        $pedido->produto = $produto;
+                    }
                 }
             }
         }

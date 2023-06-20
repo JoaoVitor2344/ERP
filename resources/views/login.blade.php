@@ -17,7 +17,7 @@
             <div class="mb-2"><a class="link">Esqueceu a senha?</a></div>
             <button class="btn-principal btn-acessar mb-2">Acessar</button>
         </form>
-        <div class="text-center"><a class="link" href="/cadastro-cliente">Cadastre-se</a></div>
+        <div class="text-center"><a class="link" href="/cadastro-{{ $tipo }}">Cadastre-se</a></div>
     </div>
 </body>
 </html>

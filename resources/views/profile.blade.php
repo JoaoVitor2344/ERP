@@ -17,9 +17,9 @@
             <div style="display: none;">
                 <input type="file" name="image" id="image">
             </div>
-            <input type="text" name="name" id="name" placeholder="Nome Completo" value="{{ $user->nome }}">
+            <input type="text" name="nome" id="nome" placeholder="Nome Completo" value="{{ $user->nome }}">
             <input type="tel" name="cpf" id="cpf" placeholder="CPF" value="{{ $user->cpf }}">
-            <input type="tel" name="phone" id="phone" placeholder="Celular" value="{{ $user->celular }}">
+            <input type="tel" name="celular" id="celular" placeholder="Celular" value="{{ $user->celular }}">
             <input class="mb-2" type="email" name="email" id="email" placeholder="E-mail" value="{{ $user->email }}">
             <a class="link" href="/cadastro-localizacao">Cadastrar endereço</a>
             <button class="btn-principal mt-3">Editar</button>
@@ -30,6 +30,7 @@
         $(document).ready(function(){
             $('#cpf').mask('000.000.000-00', {reverse: true});
             $('#phone').mask('(00) 00000-0000');
+            $("#celular").mask("(00) 00000-0000");
 
             $('#divImage').click(function() {
                 $("[type=file]").click();

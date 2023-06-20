@@ -26,7 +26,9 @@ Route::prefix('login')->name('login.')->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     Route::get("/logout", function () {
-        Auth::logout();
+        session_start();
+        session_destroy();
+
         return redirect()->route("login.index", "cliente");
     })->name("logout");
 

@@ -22,21 +22,42 @@ class LoginController extends Controller
     public function show(Request $request)
     {   
         session_start();
-        
+        session_destroy();
+
+        session_start();
+
         if($request->tipo == 'cliente') {
             $usuarios = requestGET("users");
             foreach ($usuarios as $usuario) {
                 if ($usuario->email == $request->email && $usuario->senha == $request->senha) {
-                    $_SESSION["usuario"] = $usuario;
+                    $user = new User();
+                    $user->id = $usuario->id;
+                    $user->nome = $usuario->nome;
+                    $user->cpf = $usuario->cpf;
+                    $user->email = $usuario->email;
+                    $user->celular = $usuario->celular;
+                    $user->senha = $usuario->senha;
+                    
+                    $_SESSION['user'] = $user;
 
                     return redirect()->route("home");
                 }
             }
-        } else if($request->tipo == 'fornecedor') {
+        } 
+        else if($request->tipo == 'fornecedor') {
             $fornecedores = requestGET("fornecedores");
             foreach ($fornecedores as $fornecedor) {
                 if ($fornecedor->email == $request->email && $fornecedor->senha == $request->senha) {
-                    $_SESSION["fornecedor"] = $fornecedor;
+                    $user = new User();
+                    $user->id = $fornecedor->id;
+                    $user->nome = $fornecedor->nome;
+                    $user->cnpj = $fornecedor->cnpj;
+                    $user->email = $fornecedor->email;
+                    $user->telefone = $fornecedor->telefone;
+                    $user->senha = $fornecedor->senha;
+                    
+                    $_SESSION['user'] = $user;
+
                     return redirect()->route("home");
                 }
             }

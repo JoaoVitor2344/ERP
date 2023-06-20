@@ -31,17 +31,20 @@
 
     <div class="container">
         <div class="row pedidos gap-3">
-            @foreach($pedidos as $i => $pedido)
-            <a href="/pedidos/{{ $pedido->id }}" style="color: black;">
-                <div class="pedido col-12 rounded">
-                    <div style="padding: 10px 20px; background-color: white;"><i class="fa-regular fa-clipboard" style="font-size: 50px;"></i></div>
-                    <div class="divName">
-                        <span>Pedido: {{ $pedido->id }}</span>
-                        <span>Produto: {{ $pedido->produto->nome }}</span>
+            @if (count($pedidos) > 0) 
+                @foreach($pedidos as $i => $pedido)
+                <a href="/pedidos/{{ $pedido->id }}" style="color: black;">
+                    <div class="pedido col-12 rounded">
+                        <div style="padding: 10px 20px; background-color: white;"><i class="fa-regular fa-clipboard" style="font-size: 50px;"></i></div>
+                        <div class="divName">
+                            <span>Pedido: {{ $pedido->id }}</span>
+                            <span>Produto: {{ $pedido->produto->nome }}</span>
+                        </div>
                     </div>
-                </div>
-            </a>
-            @endforeach
+                </a>
+                @endforeach
+            @endif
+            <h1 class="text-center">Nenhum Pedido Cadastrado</h1>
         </div>
     </div>
 

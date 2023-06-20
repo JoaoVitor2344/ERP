@@ -17,7 +17,7 @@ class CadastroController extends Controller
             'nome' => 'required',
             'cpf' => 'required',
             'email' => 'required',
-            'telefone' => 'required',
+            'celular' => 'required',
             'senha'  => 'required',
         ]);
         
@@ -30,7 +30,7 @@ class CadastroController extends Controller
             'nome' => $request->nome,
             'cpf' => $request->cpf,
             'email' => $request->email,
-            'telefone' => $request->telefone,
+            'celular' => $request->celular,
             'senha' => $request->senha,
         ]);
 

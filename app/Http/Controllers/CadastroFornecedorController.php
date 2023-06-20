@@ -36,6 +36,6 @@ class CadastroFornecedorController extends Controller
         
         requestPOST('fornecedores', $jsonData);
 
-        return redirect()->route('login.index');
+        return redirect()->route('login.index', 'cliente');
     }
 }

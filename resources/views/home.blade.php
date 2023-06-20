@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
     @include('layouts.head')
+    
     <link rel="stylesheet" href="assets/css/home.css">
 </head>
 <body>
@@ -9,7 +10,7 @@
 
     <div class="topicos">
         <div class="divTopico mb-4 position-relative">
-            <a href="">
+            <a href="/pedidos">
                 <div class="topico end-0 rounded-start">
                     <div>Pedidos</div>
                     <i class="fa-solid fa-cart-shopping"></i>

@@ -11,7 +11,7 @@ class CadastroLocalizacaoController extends Controller
     {
         session_start();
 
-        $id = $_SESSION['usuario']->id;
+        $id = $_SESSION['user']->id;
         $endereco = requestGET("enderecos/$id");
 
         return view("cadastro-localizacao", compact('endereco'));
@@ -32,10 +32,10 @@ class CadastroLocalizacaoController extends Controller
 
         session_start();
 
-        $id = $_SESSION['usuario']->id;
+        $id = $_SESSION['user']->id;
         $endereco = requestGET("enderecos/$id");
 
-        // Caso o usuário já tenha um endereço cadastrado, atualiza o endereço
+        // // Caso o usuário já tenha um endereço cadastrado, atualiza o endereço
         if ($endereco) {
             $jsonData = json_encode([
                 "cep" => $request->cep,
@@ -45,10 +45,11 @@ class CadastroLocalizacaoController extends Controller
                 "complemento" => $request->complemento,
             ]);
 
-            requestPUT("enderecos/$id", $jsonData);
+            $response = requestPUT("enderecos/$id", $jsonData);
 
             $message = "Endereço atualizado com sucesso!";
-        } else {
+        } 
+        else {
             $jsonData = json_encode([
                 "id2" => $id,
                 "cep" => $request->cep,
@@ -58,7 +59,7 @@ class CadastroLocalizacaoController extends Controller
                 "complemento" => $request->complemento,
             ]);
 
-            $responde = requestPOST("enderecos", $jsonData);
+            requestPOST("enderecos", $jsonData);
 
             $message = "Endereço cadastrado com sucesso!";
         }
